@@ -64,6 +64,18 @@ export function ProjectDetail({ projectId, onClose, onUpdated }: Props) {
     );
   }
 
+  function linkField(label: string, value: string | null | undefined) {
+    if (!value) return null;
+    return (
+      <div style={{ marginBottom: 14 }}>
+        <div style={{ fontSize: 11, color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 4 }}>{label}</div>
+        <a href={value} target="_blank" rel="noreferrer" className="project-drawer__repo-link" style={{ width: '100%' }}>
+          {value}
+        </a>
+      </div>
+    );
+  }
+
   async function copyToClipboard(text: string, label: string) {
     await navigator.clipboard.writeText(text);
     toast(`${label} copied!`, 'success');
@@ -158,13 +170,17 @@ export function ProjectDetail({ projectId, onClose, onUpdated }: Props) {
                     </div>
                   </div>
                   <div className="project-drawer__fields grid-2">
+                    {field('Tipo', detail.category)}
                     {field('Domain', detail.domain)}
                     {field('Hosting', detail.hosting)}
-                    {field('Frontend URL', detail.frontendUrl)}
+                    {linkField('Production URL', detail.frontendUrl)}
+                    {linkField('Pre-production URL', detail.stagingUrl)}
                     {field('Backend URL', detail.backendUrl)}
                     {field('Start Date', detail.startDate ? new Date(detail.startDate).toLocaleDateString() : null)}
                     {field('Delivery Date', detail.deliveryDate ? new Date(detail.deliveryDate).toLocaleDateString() : null)}
-                    {field('Client', detail.clientName || detail.clientCompany)}
+                    {field('Client', detail.clientName)}
+                    {field('Company', detail.clientCompany)}
+                    {field('Phone', detail.clientPhone)}
                     {field('Main Branch', detail.mainBranch)}
                   </div>
                   {githubRepos.length > 0 && (
@@ -229,7 +245,30 @@ export function ProjectDetail({ projectId, onClose, onUpdated }: Props) {
                     dbConnections.map((db) => (
                       <div key={db.id} className="project-drawer__item-card project-drawer__item-card--stacked">
                         <div className="project-drawer__item-title">{db.label}</div>
-                        <div className="project-drawer__code">
+                        <div className="project-drawer__db-grid">
+                          <div>
+                            <span>Type</span>
+                            <strong>{String(db.type || 'OTHER')}</strong>
+                          </div>
+                          <div>
+                            <span>Host</span>
+                            <strong>{db.host || '-'}</strong>
+                          </div>
+                          <div>
+                            <span>Port</span>
+                            <strong>{String(db.port || '-')}</strong>
+                          </div>
+                          <div>
+                            <span>Database</span>
+                            <strong>{db.dbName || '-'}</strong>
+                          </div>
+                        </div>
+                        {db.notes && (
+                          <div className="project-drawer__note-content" style={{ marginTop: 10 }}>
+                            {db.notes}
+                          </div>
+                        )}
+                        <div className="project-drawer__code" style={{ marginTop: 10 }}>
                           {db.host ? `${db.host}:${String(db.port ?? '')}/${String(db.dbName ?? '')}` : ''}
                         </div>
                       </div>

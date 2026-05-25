@@ -95,7 +95,7 @@ const STACK_PRESETS = {
   stackExternal: ['Stripe', 'PayPal', 'SendGrid', 'Twilio', 'Cloudinary', 'AWS S3', 'OpenAI', 'Anthropic', 'Pusher', 'Sentry'],
 };
 
-const CATEGORIES = ['Web App', 'API/Backend', 'Mobile', 'Internal Tool', 'Client Project', 'Idea/R&D', 'CLI/Script', 'Design System'];
+const CATEGORIES = ['Trabajo', 'Hobby', 'Proyecto', 'Web App', 'API/Backend', 'Mobile', 'Internal Tool', 'Client Project', 'Idea/R&D', 'CLI/Script', 'Design System'];
 const BILLING_TYPES = ['Fixed', 'Hourly', 'Monthly', 'Free'];
 const DOMAIN_REGISTRARS = ['GoDaddy', 'Namecheap', 'Cloudflare'];
 const HOSTING_PROVIDERS = ['Vercel', 'DigitalOcean', 'AWS', 'Railway', 'VPS'];
@@ -471,7 +471,7 @@ export function ProjectForm({ open, onClose, onSubmit, project, isLoading }: Pro
 
               {/* Category */}
               <div>
-                <Label optional>Category</Label>
+                <Label optional>Tipo</Label>
                 <div className="flex flex-wrap gap-1.5">
                   {CATEGORIES.map((c) => (
                     <button
@@ -605,11 +605,11 @@ export function ProjectForm({ open, onClose, onSubmit, project, isLoading }: Pro
                 </div>
                 {/* URLs */}
                 <div className="grid grid-cols-2 gap-3">
-                  <div><Label optional>Frontend URL</Label><input className="input-base" placeholder="https://app.example.com" value={form.frontendUrl} onChange={(e) => set('frontendUrl', e.target.value)} /></div>
+                  <div><Label optional>Production URL</Label><input className="input-base" placeholder="https://app.example.com" value={form.frontendUrl} onChange={(e) => set('frontendUrl', e.target.value)} /></div>
                   <div><Label optional>Backend URL</Label><input className="input-base" placeholder="https://api.example.com" value={form.backendUrl} onChange={(e) => set('backendUrl', e.target.value)} /></div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <div><Label optional>Staging URL</Label><input className="input-base" placeholder="https://staging.example.com" value={form.stagingUrl} onChange={(e) => set('stagingUrl', e.target.value)} /></div>
+                  <div><Label optional>Pre-production URL</Label><input className="input-base" placeholder="https://staging.example.com" value={form.stagingUrl} onChange={(e) => set('stagingUrl', e.target.value)} /></div>
                   <div><Label optional>Admin Panel URL</Label><input className="input-base" placeholder="https://admin.example.com" value={form.adminPanelUrl} onChange={(e) => set('adminPanelUrl', e.target.value)} /></div>
                 </div>
                 {/* GitHub Repos */}
