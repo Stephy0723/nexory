@@ -46,6 +46,7 @@ export function ProjectDetail({ projectId, onClose, onUpdated }: Props) {
   const currentUserRole: MemberRole = detail?._access?.role ?? 'OWNER';
 
   const githubRepos = useMemo(() => Array.isArray(detail?.githubRepos) ? detail.githubRepos : [], [detail]);
+  const screenshots = useMemo(() => Array.isArray(detail?.screenshots) ? detail.screenshots : [], [detail]);
   const notes = detail?.notes ?? [];
   const tasks = detail?.tasks ?? [];
   const credentials = detail?.credentials ?? [];
@@ -121,6 +122,18 @@ export function ProjectDetail({ projectId, onClose, onUpdated }: Props) {
             <div className="project-drawer__body">
               {tab === 'overview' && (
                 <div className="project-drawer__section">
+                  {screenshots.length > 0 && (
+                    <div className="project-drawer__gallery">
+                      <img src={screenshots[0]} alt="" className="project-drawer__hero-image" />
+                      {screenshots.length > 1 && (
+                        <div className="project-drawer__thumb-row">
+                          {screenshots.slice(1, 4).map((src, index) => (
+                            <img key={`${src}-${index}`} src={src} alt="" className="project-drawer__thumb-image" />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
                   {!!detail.description && (
                     <div className="project-drawer__description">
                       {detail.description}

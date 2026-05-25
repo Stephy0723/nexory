@@ -13,6 +13,10 @@ import { statusLabel, priorityLabel, formatDate, getErrorMessage } from '@/utils
 import toast from 'react-hot-toast';
 import type { Project, ProjectStatus } from '@/types';
 
+function getProjectCover(project: Project) {
+  return Array.isArray(project.screenshots) && project.screenshots.length > 0 ? project.screenshots[0] : null;
+}
+
 function statusBadgeColor(s: ProjectStatus) {
   if (s === 'ACTIVE') return 'green';
   if (s === 'IN_DEVELOPMENT') return 'cyan';
@@ -102,6 +106,25 @@ export function Projects() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((p) => (
             <div key={p.id} className="card p-5 flex flex-col gap-3 hover:border-[rgba(57,208,216,0.3)] transition-colors">
+              {getProjectCover(p) ? (
+                <button
+                  type="button"
+                  className="block -mx-5 -mt-5 mb-1 aspect-video overflow-hidden rounded-t-lg bg-[#080B12] border-b border-[#21262D]"
+                  onClick={() => openProjectView(p.id)}
+                  aria-label={`Ver ${p.name}`}
+                >
+                  <img src={getProjectCover(p) || ''} alt="" className="h-full w-full object-cover transition-transform duration-200 hover:scale-[1.02]" />
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="flex -mx-5 -mt-5 mb-1 aspect-video items-center justify-center rounded-t-lg bg-[radial-gradient(circle_at_top,rgba(57,208,216,0.14),rgba(13,17,23,0.95))] border-b border-[#21262D]"
+                  onClick={() => openProjectView(p.id)}
+                  aria-label={`Ver ${p.name}`}
+                >
+                  <FolderKanban size={28} className="text-[#39D0D8]/60" />
+                </button>
+              )}
               <div className="flex items-start justify-between gap-2">
                 <h3 className="text-sm font-semibold text-[#E6EDF3] leading-tight">{p.name}</h3>
                 <Badge label={statusLabel(p.status)} color={statusBadgeColor(p.status)} size="xs" />

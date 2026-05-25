@@ -460,6 +460,36 @@ select.form-input {
   gap: 18px;
 }
 
+.project-drawer__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-drawer__hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-base);
+}
+
+.project-drawer__thumb-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.project-drawer__thumb-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: var(--bg-base);
+}
+
 .project-drawer__description {
   padding: 16px 18px;
   background: rgba(255,255,255,0.04);
