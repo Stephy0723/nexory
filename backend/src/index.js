@@ -1,5 +1,16 @@
 'use strict';
 require('dotenv').config();
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught exception during startup:', err);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (err) => {
+  console.error('Unhandled rejection during startup:', err);
+  process.exit(1);
+});
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -50,8 +61,24 @@ app.use(errorHandler);
 
 const PORT = parseInt(process.env.PORT || '3001', 10);
 
+function getDatabaseHost() {
+  try {
+    return new URL(process.env.DATABASE_URL || '').host || 'missing';
+  } catch {
+    return 'invalid';
+  }
+}
+
 async function start() {
   try {
+    console.log('Starting NEXORY API', {
+      nodeEnv: process.env.NODE_ENV,
+      port: PORT,
+      databaseHost: getDatabaseHost(),
+      hasJwtSecret: Boolean(process.env.JWT_SECRET),
+      hasEncryptionKey: Boolean(process.env.ENCRYPTION_KEY),
+      hasAnthropicKey: Boolean(process.env.ANTHROPIC_API_KEY)
+    });
     await prisma.$connect();
     app.listen(PORT, () => {
       console.log(`\n🚀 NEXORY Backend → http://localhost:${PORT}\n`);
