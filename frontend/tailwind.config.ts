@@ -2,8 +2,8 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    'c:/Users/salyl/nexory/frontend/index.html',
-    'c:/Users/salyl/nexory/frontend/src/**/*.{js,ts,jsx,tsx}',
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
