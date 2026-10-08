@@ -193,3 +193,4 @@ export function ProjectModal({ project, onClose, onSaved }: Props) {
     </div>
   );
 }
+

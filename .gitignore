@@ -10,3 +10,4 @@ dist/
 frontend/.env.local
 .claude/settings.local.json
 *.log
+

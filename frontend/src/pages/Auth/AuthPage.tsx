@@ -40,7 +40,7 @@ export function AuthPage() {
           <div className="w-9 h-9 rounded-xl bg-[#39D0D8] flex items-center justify-center">
             <Zap size={18} className="text-[#080B12]" />
           </div>
-          <span className="text-xl font-bold text-[#E6EDF3] tracking-wide">NEXORY</span>
+          <span className="text-xl font-bold text-[#E6EDF3] tracking-wide">STELIANT NEXO</span>
         </div>
 
         <div className="bg-[#0D1117] border border-[#21262D] rounded-xl p-6">
@@ -65,7 +65,7 @@ export function AuthPage() {
               <input
                 className="input-base"
                 type="email"
-                placeholder="demo@nexory.dev"
+                placeholder="demo@steliant-nexo.dev"
                 value={form.email}
                 onChange={(e) => set('email', e.target.value)}
                 required
@@ -77,7 +77,7 @@ export function AuthPage() {
                 <input
                   className="input-base"
                   type="text"
-                  placeholder="nexory_demo"
+                  placeholder="steliant-nexo_demo"
                   value={form.username}
                   onChange={(e) => set('username', e.target.value)}
                   required
@@ -107,7 +107,7 @@ export function AuthPage() {
 
           {mode === 'login' && (
             <p className="text-xs text-[#484F58] text-center mt-4">
-              Demo: <span className="text-[#8B949E]">demo@nexory.dev</span> / <span className="text-[#8B949E]">nexory123</span>
+              Demo: <span className="text-[#8B949E]">demo@steliant-nexo.dev</span> / <span className="text-[#8B949E]">steliant-nexo123</span>
             </p>
           )}
         </div>

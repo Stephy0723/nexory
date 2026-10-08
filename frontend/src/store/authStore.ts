@@ -22,6 +22,7 @@ export const useAuthStore = create<AuthState>()(
       clear: () => set({ user: null, accessToken: null }),
       clearAuth: () => set({ user: null, accessToken: null }),
     }),
-    { name: 'nexory_auth' }
+    { name: 'steliant-nexo_auth' }
   )
 );
+

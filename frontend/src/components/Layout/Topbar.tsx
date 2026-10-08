@@ -21,7 +21,7 @@ const envConfig: Record<string, { label: string; cls: string }> = {
 
 export function Topbar() {
   const location = useLocation();
-  const title = Object.entries(titles).find(([k]) => location.pathname.startsWith(k))?.[1] ?? 'NEXORY';
+  const title = Object.entries(titles).find(([k]) => location.pathname.startsWith(k))?.[1] ?? 'STELIANT NEXO';
   const badge = envConfig[env] ?? envConfig.development;
 
   return (

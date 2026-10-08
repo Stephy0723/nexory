@@ -19,3 +19,4 @@ export const useAppStore = create<AppState>((set) => ({
   setSearch: (searchQuery) => set({ searchQuery }),
   setHelpOpen: (isHelpOpen) => set({ isHelpOpen }),
 }));
+

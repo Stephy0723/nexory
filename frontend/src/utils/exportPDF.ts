@@ -136,7 +136,7 @@ export function exportProjectToPDF({ project, exportedBy }: ExportData): void {
   <!-- Header -->
   <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:20px;border-bottom:3px solid #111;">
     <div>
-      <div style="font-size:10px;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">NEXORY · Reporte de Proyecto</div>
+      <div style="font-size:10px;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">STELIANT NEXO · Reporte de Proyecto</div>
       <h1 style="font-size:24px;color:#111;margin-bottom:4px;">${escapeHtml(project.name)}</h1>
       ${project.description ? `<p style="font-size:13px;color:#666;margin-top:6px;max-width:520px;line-height:1.5;">${escapeHtml(project.description)}</p>` : ''}
     </div>
@@ -188,7 +188,7 @@ export function exportProjectToPDF({ project, exportedBy }: ExportData): void {
 
   <!-- Footer -->
   <div style="margin-top:48px;padding-top:12px;border-top:1px solid #e5e7eb;font-size:10px;color:#bbb;display:flex;justify-content:space-between;">
-    <span>NEXORY · Reporte confidencial · No incluye credenciales ni datos de acceso</span>
+    <span>STELIANT NEXO · Reporte confidencial · No incluye credenciales ni datos de acceso</span>
     <span>Generado el ${generatedAt}${exportedBy ? ' por ' + escapeHtml(exportedBy) : ''}</span>
   </div>
 
@@ -206,3 +206,4 @@ export function exportProjectToPDF({ project, exportedBy }: ExportData): void {
   // Small delay so styles load before print dialog
   setTimeout(() => win.print(), 350);
 }
+

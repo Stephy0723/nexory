@@ -75,3 +75,4 @@ export function getErrorMessage(error: unknown): string {
   const e = error as any;
   return e?.response?.data?.error ?? e?.message ?? 'Unknown error';
 }
+

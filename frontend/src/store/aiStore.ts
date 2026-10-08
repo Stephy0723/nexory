@@ -60,3 +60,4 @@ export const useAIStore = create<AIState>((set) => ({
     })),
   clearMessages: () => set({ messages: [], conversationHistory: [] }),
 }));
+

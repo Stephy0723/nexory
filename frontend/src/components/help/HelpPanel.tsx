@@ -170,3 +170,4 @@ export function HelpPanel() {
     </div>
   );
 }
+

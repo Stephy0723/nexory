@@ -2,7 +2,6 @@ import { useQueryClient } from '@tanstack/react-query';
 import api from '@/utils/api';
 import { useAIStore, type AIAction } from '@/store/aiStore';
 import { useAppStore } from '@/store/appStore';
-import { nanoid } from 'nanoid';
 
 function getNanoid() {
   return Math.random().toString(36).slice(2, 10);
@@ -71,3 +70,4 @@ export function useAI() {
 
   return { sendMessage, applyChanges };
 }
+

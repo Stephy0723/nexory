@@ -18,3 +18,4 @@ function verifyRefreshToken(token) {
 }
 
 module.exports = { generateAccessToken, generateRefreshToken, verifyAccessToken, verifyRefreshToken };
+

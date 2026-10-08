@@ -1,5 +1,5 @@
 {
-  "name": "nexory-frontend",
+  "name": "steliant-nexo-frontend",
   "version": "2.0.0",
   "type": "module",
   "scripts": {
@@ -33,3 +33,4 @@
     "vite": "^5.3.1"
   }
 }
+

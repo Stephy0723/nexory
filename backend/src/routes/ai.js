@@ -10,3 +10,4 @@ router.post('/chat', chat);
 router.post('/apply', apply);
 
 module.exports = router;
+

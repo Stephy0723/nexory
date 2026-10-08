@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
+  base: '/demos/steliant-nexo/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -19,3 +20,4 @@ export default defineConfig({
     } : undefined,
   },
 });
+

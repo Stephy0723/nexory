@@ -9,3 +9,4 @@ router.use(authenticate);
 router.get('/', c.list);
 
 module.exports = router;
+

@@ -269,3 +269,4 @@ async function remove(req, res, next) {
 }
 
 module.exports = { list, stats, create, getById, update, remove };
+

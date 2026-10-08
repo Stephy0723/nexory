@@ -42,3 +42,4 @@ function decrypt(encryptedStr) {
 }
 
 module.exports = { encrypt, decrypt };
+

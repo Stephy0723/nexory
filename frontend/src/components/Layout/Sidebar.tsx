@@ -23,7 +23,7 @@ export function Sidebar() {
         <div className="w-7 h-7 rounded-lg bg-[#39D0D8] flex items-center justify-center shrink-0">
           <Zap size={14} className="text-[#080B12]" />
         </div>
-        <span className="hidden lg:block text-sm font-bold text-[#E6EDF3] tracking-wide">NEXORY</span>
+        <span className="hidden lg:block text-sm font-bold text-[#E6EDF3] tracking-wide">STELIANT NEXO</span>
       </div>
 
       {/* Nav */}

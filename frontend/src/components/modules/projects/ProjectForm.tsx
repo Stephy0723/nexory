@@ -770,3 +770,4 @@ export function ProjectForm({ open, onClose, onSubmit, project, isLoading }: Pro
     </>
   );
 }
+

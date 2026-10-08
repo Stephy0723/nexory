@@ -315,3 +315,4 @@ async function applyBulkUpdate(action, userId) {
 }
 
 module.exports = { chat, apply };
+

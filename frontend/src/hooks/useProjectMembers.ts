@@ -38,3 +38,4 @@ export function useRemoveMember(projectId: string) {
     onSuccess: () => qc.invalidateQueries({ queryKey: ['projectMembers', projectId] }),
   });
 }
+

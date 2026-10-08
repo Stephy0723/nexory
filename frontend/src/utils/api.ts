@@ -1,9 +1,11 @@
 import axios from 'axios';
+import {showcaseAdapter} from './showcaseAdapter';
 import { useAuthStore } from '@/store/authStore';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3001/api',
-  withCredentials: true,
+  withCredentials: false,
+  adapter: showcaseAdapter,
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -116,3 +118,4 @@ export const aiApi = {
   chat: (body: unknown) => api.post('/ai/chat', body),
   apply: (actions: unknown[]) => api.post('/ai/apply', { actions }),
 };
+

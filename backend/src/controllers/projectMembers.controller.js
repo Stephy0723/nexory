@@ -118,3 +118,4 @@ async function remove(req, res, next) {
 }
 
 module.exports = { list, invite, update, remove };
+

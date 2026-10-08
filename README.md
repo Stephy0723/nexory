@@ -106,3 +106,4 @@ Located at `backend/.env`:
 
 **Backend:** Node.js · Express · Prisma · SQLite · bcryptjs · jsonwebtoken  
 **Frontend:** React 18 · TypeScript · Vite · Zustand · @dnd-kit · Axios
+

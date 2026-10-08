@@ -307,3 +307,4 @@ export function ProjectDetail({ projectId, onClose, onUpdated }: Props) {
     </>
   );
 }
+

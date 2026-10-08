@@ -29,3 +29,4 @@ function canManageMembers(access) {
 }
 
 module.exports = { getProjectAccess, canEdit, canManageMembers };
+

@@ -12,3 +12,4 @@ router.post('/logout', c.logout);
 router.get('/me', authenticate, c.me);
 
 module.exports = router;
+

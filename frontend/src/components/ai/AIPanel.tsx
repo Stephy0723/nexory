@@ -88,7 +88,7 @@ export function AIPanel() {
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
             <Sparkles size={16} className="text-[#39D0D8]" />
-            <span className="font-mono text-sm font-bold text-[#39D0D8]">NEXORY AI</span>
+            <span className="font-mono text-sm font-bold text-[#39D0D8]">STELIANT NEXO AI</span>
             <span className="text-xs text-[#484F58]">Assistant</span>
           </div>
           <div className="flex items-center gap-1">
@@ -213,3 +213,4 @@ export function AIPanel() {
     </div>
   );
 }
+

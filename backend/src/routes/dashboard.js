@@ -6,3 +6,4 @@ router.use(authenticate);
 router.get('/', ctrl.stats);
 
 module.exports = router;
+
